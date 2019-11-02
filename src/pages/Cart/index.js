@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import {
   MdAddCircleOutline,
   MdRemoveCircleOutline,
@@ -12,7 +11,7 @@ import { formatPrice } from '../../util/format';
 
 import { Container, ProductTable, Total } from './styles';
 
-export default function Cart({ removeFromCart }) {
+export default function Cart() {
   const total = useSelector(state =>
     formatPrice(
       state.cart.reduce((totalSum, product) => {
